@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <h1><router-link to="Welcome">ddddddddddd</router-link></h1>
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
