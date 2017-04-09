@@ -22,7 +22,12 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src')
+      '@': resolve('src'),
+      // 自己加的路径别名
+      // resolve(..) 解决了针对当前目录的计算，路径只写当前项目目录的相对路径即可
+      "assets": resolve("src/assets"),
+      "jquery": resolve("node_modules/jquery/src/jquery"),
+      "directives": resolve('src/directives')
     }
   },
   module: {
@@ -61,6 +66,10 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
+      },
+      {
+        test: /\.scss$/,
+        loader: 'style!css!sass?sourceMap'
       }
     ]
   }

@@ -5,12 +5,17 @@ import App from './App' // 引入根组件
 import router from './router' // 引入Router
 import store from './vuex/store' // 引入 vuex store
 
+
+// 引用其它组件使用的css
+import '../node_modules/cropper/dist/cropper.css'
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#root',
+  // el: '#app',
+  el: '#app',
   router,
-  template: '<App/>',
+  template: "<App></App>",
   components: { App }
 })
